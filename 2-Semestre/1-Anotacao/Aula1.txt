@@ -1,0 +1,32 @@
+Classe (Entidade)
+
+---------
+|Carro	|	-> Nome
+|_______|
+|Marca	|	-> Atributos (Características)
+|Modelo |
+|Cor    |
+|_______|
+|Acelerar	-> Métodos(Ação)
+|Frear  |
+---------
+
+Características da linguagem Java:
+
+1 - Portabilidade -> Imigração para outras plataformas
+2 - Multithreading -> Faz várias coisas ao mesmo tempo
+3 - Orientação a objeto
+
+Compilação:
+
+Programa.java
+
+JavaC -> compilador
+
+Programa.class (bytecode) -> Executável do java, que pode ser usado em qualquer sistema. Basta ter o jvm -> Interpretador (roda o java)
+
+Garbage collection:
+
+Gerencia e libera a memória 
+Também usado no ASP.NET
+
