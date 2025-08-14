@@ -1,0 +1,18 @@
+Scanner    |
+-----------|
+nextLine() |     -> Classe (metodo)
+___________|
+
+Cria uma Instância de Scanner -> New
+Carrega todas as Características de Scanner
+
+Para usar a classe Scanner, tem que importar "java.util.Scanner"
+-> Scanner meuScanner = new Scanner(System.in);
+    tipo     nome          cria um objeto
+
+-> System.out.printLn("Entrada: ");
+-> Strinng nome = meuScanner.nextLine();
+
+Extensão:
+arquivo.java -> pasta src
+arquivo.class -> pasta bin
