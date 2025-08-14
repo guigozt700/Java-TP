@@ -1,0 +1,26 @@
+Fluxo básico:
+Entrada -> Processamento -> Saída
+
+1-Entrada:
+Coletando dados
+Conversão, verificaão e manipulação de tipo de dados
+
+2-Processamento:
+O que é preciso para processar e manipular os dados
+Como fazer operações básicas, estruturais e lógica
+
+Definir melhor estrutura mais eficiente
+
+Estrutra de dados:
+
+- Lista
+- Arvore
+- Hash
+
+3-Saída:
+Etapa de resultado final por meio de:
+- Tela
+- Arquivo
+- Rede
+
+
