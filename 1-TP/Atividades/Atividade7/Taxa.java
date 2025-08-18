@@ -1,12 +1,12 @@
-package Atividades.Atividade7;
-
 import java.util.Scanner;
 
 public class Taxa {
     public static void main(String[] args) {
-        //Nome: Guilherme Gomes da Silva
-        //RA: 2171392511043
-        //Objetivo: Faça um programa na Linguagem Java para efetuar o cálculo e a apresentação do valor de uma prestação em atraso, utilizando a fórmula PRESTAÇÃO <-- VALOR + (VALOR * (TAXA/100) * TEMPO).
+        // Nome: Guilherme Gomes da Silva
+        // RA: 2171392511043
+        // Objetivo: Faça um programa na Linguagem Java para efetuar o cálculo e a
+        // apresentação do valor de uma prestação em atraso, utilizando a fórmula
+        // PRESTAÇÃO <-- VALOR + (VALOR * (TAXA/100) * TEMPO).
         Scanner entrada = new Scanner(System.in);
 
         System.out.print("Informe o valor da prestação (R$): ");

@@ -1,11 +1,13 @@
-package Atividades.Atividade2;
 import java.util.Scanner;
 
 public class Temperatura {
     public static void main(String[] args) {
-        //Nome: Guilherme Gomes da Silva
-        //RA: 2171392511043
-        //Objetivo: Faça um programa na Linguagem Java que leia uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de conversão é F <-- (9 * C + 160) /5, sendo f a temperatura em Fahrenheit e C a temperatura em Celsius.
+        // Nome: Guilherme Gomes da Silva
+        // RA: 2171392511043
+        // Objetivo: Faça um programa na Linguagem Java que leia uma temperatura em
+        // graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de
+        // conversão é F <-- (9 * C + 160) /5, sendo f a temperatura em Fahrenheit e C a
+        // temperatura em Celsius.
 
         Scanner entrada = new Scanner(System.in);
 

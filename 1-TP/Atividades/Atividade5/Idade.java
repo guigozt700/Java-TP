@@ -1,12 +1,11 @@
-package Atividades.Atividade5;
-
 import java.util.Scanner;
 
 public class Idade {
     public static void main(String[] args) {
-        //Nome: Guilherme Gomes da Silva
-        //RA: 2171392511043
-        //Objetivo: Faça um programa na Linguagem Java que leia a idade de uma pessoa expressa em ano, mês e dia e mostre-as em dias.
+        // Nome: Guilherme Gomes da Silva
+        // RA: 2171392511043
+        // Objetivo: Faça um programa na Linguagem Java que leia a idade de uma pessoa
+        // expressa em ano, mês e dia e mostre-as em dias.
         Scanner entrada = new Scanner(System.in);
 
         System.out.print("Informe o ANO de seu nascimento: ");
