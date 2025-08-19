@@ -1,5 +1,3 @@
-//package 2-ED.3-Atividade.2-Atividade;
-
 public class ManipulacaoArray {
     public static void main(String[] args) {
         int[] valores = {10, 20, 30, 40, 50};

@@ -1,7 +1,4 @@
-
 import java.util.Scanner;
-
-//package 2-ED.3-Atividade.1-Atividade;
 
 public class Calculos {
     public static void main(String[] args) {
