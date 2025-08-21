@@ -1,0 +1,65 @@
+Declaração da classe
+-> class
+
+Nome da classe
+-> HelloWorld
+
+Metodo e modificadores de acesso
+-> public static
+
+Tipo de retorno:
+-> void
+
+Nome do metodo:
+-> main
+
+Parametros / Argumentos:
+-> String[] args()
+
+-------------------------------------
+Declaração de função:
+
+-> boolean CPF(String numCPF){
+    ///
+}
+
+"Método" fica dentro da classe, diferente da "Função"
+
+--------------------------------------
+
+Tipos primitivos:
+-> INT, FLOAT e CHAR
+
+float saldo1 = 100.30f -> Força a ser float
+double saldo2 = 100.30
+
+Uso do \ pra caractere
+print(" Você disse \"Hello World\" ")
+
+Convenções --------------------------
+
+Classe com letra maiuscula
+Deve ser um Substantivo
+
+Interface com letra maiuscula 
+Deve ser um adjetivo
+
+Metodo com letra minuscula
+Deve ser um verbo
+
+Class Employee{
+    void desenhar(){
+        String corLapis = "azul" 
+            (camelCase)
+    }
+}
+
+NOME_ALUNO = 18 -> Constante
+
+Caracteristicas de um loop:
+1º -> Inicio
+2º -> Condição
+3º -> Incremento
+
+Do While -> Faz a instrução e depois testa a Condição
+While -> Testa a condição primeiro antes de fazer a instrução
