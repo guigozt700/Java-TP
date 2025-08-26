@@ -1,0 +1,22 @@
+Arrays são imutaveis -> não aumenta o seu tamanho
+
+Criação:
+-> double [] temperaturas = new double[365]
+-> String [] carros = {"volvo", "bmw", "fox"}
+-> int [] numeros = {{1,2,3}, {4,5,6}} //Matriz 
+
+ForEach:
+-> Como o for normal, mas não se preocupa com o indice, apenas percorrendo diretamento o array e pegando cada posição "temp"
+-> for(double temp : temperaturas){
+    print(temp)
+}
+
+ArrayList:
+-> Mutável e dinâmico
+-> metodos para adicionar, remover e editar elementos
+-> InterfaceList
+
+-> Programa.java -> javaC -> Programa.class
+-> java Programa 'Marcos"
+    -> Não dá erro, pois esta passando "marcos" como argumento. Caso eu imprima:
+     "print(args[0])" vai imprimir o primeiro elemento do String args[] do main

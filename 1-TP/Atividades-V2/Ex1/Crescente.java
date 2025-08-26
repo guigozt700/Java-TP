@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Crescente {
     public static void main(String[] args) {
         //Nome: Guilherme Gomes da Silva
-        //RA:
-        //Objetivo: 
+        //RA: 2171392511043
+        //Objetivo: Faça um programa na Linguagem Java que leia 3 (três) valores inteiros e apresente os 3 números em ordem crescente.
         try (Scanner entrada = new Scanner(System.in)) 
         {
             System.out.print("Digite o 1º valor: ");
