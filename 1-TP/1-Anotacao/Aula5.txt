@@ -1,0 +1,22 @@
+Orientação a objetos já existia desde a decada de 80 com C++
+Somente com a criação do JAVA que foi se popularizar na decada de 90
+
+Linguagens das decadas:
+-> C
+-> C++
+-> (Microsoft) Visual Basic -> VB.NET
+    -> Depois a criação do C#
+-> Pascal (Delphi)
+-> Java
+
+POO é um paradigma de programação
+-> Uma forma, nem certa e nem errada de escrever um software
+
+Entre outros:
+-> Procedural
+-> Lógico
+-> Funcional
+-> Orientação a objetos
+
+Classe define o tipo do objeto e suas caracteristicas
+Objetos que são instanciadas das classes, possuem vida (não são estáticas)

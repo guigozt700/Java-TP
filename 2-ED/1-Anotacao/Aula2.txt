@@ -1,0 +1,12 @@
+Guard Clauses (retornos antecipados)
+Reduz o aninhamento em funções de busca / remoção (Melhora a legibilidade)
+
+if (entrada == null) return;
+if (lista.isEmpty()) return;
+if (!lista.contains(valor)) return;
+lista.remove(valor);
+
+Operadores ternarios
+condicao ? valorSeVerdadeiro : valorSeFalso
+
+String tipo = idade >= 18 ? "adulto" : "menor"
