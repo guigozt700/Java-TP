@@ -7,5 +7,9 @@ public class App {
         cliente.idCliente = 1;
 
         cliente.metodo();
+
+        Calcula novoCalculo = new Calcula(10, 20);
+
+        System.out.println(novoCalculo.somar());
     }
 }

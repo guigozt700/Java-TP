@@ -1,0 +1,20 @@
+Classes <- Objeto (instância -> Criar um objeto a partir da estrutura de uma classe)
+
+Construtor
+-> Ao criar o objeto, automaticamente executa seu construtor
+-> Mesmo nome da classe
+-> Se tiver parâmetro, ao criar a classe é preciso passar os parametros
+-> Ex:
+    Ao criar um objeto aluno, passa o nome, matricula, curso...
+    Aluno novoAluno = new Aluno('Guilherme', '123', 'DSM')
+    Pra ser feito uma validão ou operação com esses dados 
+
+Atributos
+-> OS atributos de um objeto só devem ser acessados pelo próprio objeto
+-> Uso do private
+
+Metodos
+-> São as funções que o objeto podem realizar
+-> Ex:
+    Caneta tem os metodos desenhar() e escrever()
+
