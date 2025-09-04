@@ -1,0 +1,11 @@
+Variavel escalar:
+-> Comuns, guardam apenas um valor
+
+Arrays (coleção):
+-> Armazena varios valores no mesmo espaço de memória
+-> int[] idades = new in[10]
+   Tipo   Nome   Instancia  Tamanho
+
+Definição:
+-> de 0 até n-1
+-> idades[5] = 4 indices
