@@ -1,0 +1,65 @@
+This
+
+Uso do this para acessar os atributos dentro da classe, quando se tem o uso do Construtor
+Ex:
+class Carro{
+    private String modelo;
+    private int ano;
+}
+Carro(String m, int a){
+    this.modelo = m;
+    this.ano = a;
+}
+String mostrar(){
+    return modelo + ano;
+}
+
+Na instancia da classe fica:
+-> Carro c1 = new Carro("polo", 2025);
+
+---------------------------------------
+
+Para alterar os atribuidos private, as vezes é preciso de metodos get e set
+
+Getters = get
+-> Vai buscar alguma coisa
+
+public String getCPF(){
+    return CPF
+}
+
+Setters = set
+-> public void setCPF(String cpf){
+    CPF = cpf
+}
+
+---------------------------------
+
+Se o metodo não tem modificador de acesso (public, private, protected), é atribuido como Friendly
+
+---------------------------------
+
+Coesão e acoplamento
+
+Coesão:
+-> Como os elementos estão relacionados e funcionam juntos pra realizar um objetivo. 
+
+Acoplamento:
+-> Refere de como as classes estão interconectadas ou dependentes de outras
+
+---------------------------------
+
+Uso do final para que um atributo/variavel não possam ser mudadas ou alteradas
+
+class ConstanteBanco{
+    public static final int NUM_MAXIMO_CONTAS;
+}
+
+Atributos final geralmente são declarados como static
+
+----------------------------------
+Construtores não retornam nenhum valor (nem mesmo void)
+
+--------------------------------
+Sobrecarga de metodos
+-> È quando usa o mesmo metodo mas com parametros diferentes
