@@ -12,12 +12,29 @@ class ContaCorrente{
         numeroCPF = cpf;
         saldoConta = saldo;
     }
+
+    public void imprimeDados(){
+        System.out.println("\n=== Dados Pessoais ===\n");
+        System.out.println("Número Conta: " + numeroConta);
+        System.out.println("Nome Cliente: " + nomeCliente);
+        System.out.println("Numero CPF: " + numeroCPF);
+        System.out.println("Saldo Conta: " + saldoConta);
+    }
+
+    public void depositar(double valor){
+        if (valor > 0){
+            saldoConta += valor;
+        }
+        else{
+            System.out.println("\nValor não permitido! tente novamente mais tarde...");
+        }
+    }
 }
 
-public class Main{
+public class Main2{
     //Nome: Guilherme Gomes da Silva
     //RA: 2171392511043
-    //Objetivo: Fazer um programa para ler os dados de uma conta corrente: Número da Conta; Nome do Cliente; CPF; Saldo Da conta. Em seguida, mostrar a tela todos os atributos. Utilize classe.
+    //Objetivo: No exercício anterior crie 2 métodos
     public static void main(String[] args) {
         try(Scanner entrada = new Scanner(System.in)){
             System.out.print("Informe o Número da Conta: ");
@@ -32,11 +49,13 @@ public class Main{
 
             ContaCorrente novaConta = new ContaCorrente(numero, nome, cpf, saldo);
 
-            System.out.println("\n=== Dados Pessoais ===\n");
-            System.out.println("Número Conta: " + novaConta.numeroConta);
-            System.out.println("Nome Cliente: " + novaConta.nomeCliente);
-            System.out.println("Numero CPF: " + novaConta.numeroCPF);
-            System.out.println("Saldo Conta: " + novaConta.saldoConta);
+            novaConta.imprimeDados();
+
+            System.out.print("\nQuantos R$ quer depositar na sua conta?: ");
+            double valorDeposito = entrada.nextDouble();
+            novaConta.depositar(valorDeposito);
+
+            novaConta.imprimeDados();
         }
     }
 }
