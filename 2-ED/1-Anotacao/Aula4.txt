@@ -1,0 +1,33 @@
+Vetores vs Matriz
+
+Vetor: int[] v = new int[5] -> 1 dimensão
+Matriz: int[][] M = new int[3][4] -> 2 dimensões
+
+Aplicações:
+- Planilhas
+- Processamento de Imagens
+- Jogos digitais
+- Banco de dados
+- Computação Cientifica
+- Algoritmos de Grafos
+
+Acessos espeificos:
+M[0][2] -> Primeira linha, coluna 2
+
+Percurso por linha:
+
+for(int linha=0; linha < M.length;linha++){ //Linha
+    for(int coluna=0; coluna < M[linha].length; coluna++){ //Coluna
+        print(M[linha][coluna] + " ")
+    }
+    print() //Quebra linha
+}
+
+Percurso por coluna:
+
+for(int coluna = 0; coluna < M[0].length; coluna++){ //Acessa a linha 0
+    for(int linha = 0; linha < M.length; linha++){
+        print(M[linha][coluna])
+    }
+
+}
