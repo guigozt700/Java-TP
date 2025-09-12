@@ -25,6 +25,9 @@ class Retangulo{
 }
 
 public class Main{
+    //Nome: Guilherme Gomes da Silva
+    //RA: 2171392511043
+    //Objetivo:  Fazer um programa para ler os valores da largura e altura de um retângulo. Em seguida, mostrar a tela o valor da sua área, perímetro e diagonal. Usar uma classe como diagrama abaixo: (conforme o PDF)
     public static void main(String[] args) {
         try(Scanner entrada = new Scanner(System.in)){
             System.out.print("Largura: ");
