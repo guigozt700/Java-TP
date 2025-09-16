@@ -1,0 +1,95 @@
+Modificadores de acesso:
+
+public
+→ Pode ser acessado de qualquer lugar, por qualquer classe.
+
+public class Pessoa {
+    public String nome;
+
+    public void dizerOi() {
+        System.out.println("Oi!");
+    }
+}
+
+private
+→ Só pode ser acessado dentro da própria classe.
+
+public class Conta {
+    private double saldo;
+
+    private void mostrarSaldo() {
+        System.out.println("Saldo: " + saldo);
+    }
+}
+
+protected
+→ Pode ser acessado pela própria classe, pelas classes do mesmo pacote e por classes que herdam dela.
+
+public class Animal {
+    protected void fazerSom() {
+        System.out.println("Som de animal");
+    }
+}
+
+public class Cachorro extends Animal {
+    public void latir() {
+        fazerSom(); // permitido, pois é protected
+    }
+}
+
+Sem modificador (default / friendly)
+→ Pode ser acessado apenas por classes do mesmo pacote.
+
+class Produto {
+    String nome;  // sem modificador = default
+    void mostrarNome() {
+        System.out.println("Produto: " + nome);
+    }
+}
+
+Outros modificadores:
+
+static
+→ Pertence à classe, não ao objeto.
+→ Pode ser usado sem criar um objeto da classe.
+
+public class Util {
+    public static int somar(int a, int b) {
+        return a + b;
+    }
+}
+
+// uso:
+int resultado = Util.somar(5, 3); // não precisa criar objeto
+
+abstract
+→ Não pode ser instanciada (ou seja, não dá pra criar objetos dela).
+→ Serve como modelo para outras classes que a estendem.
+
+public abstract class Veiculo {
+    public abstract void mover();
+}
+
+public class Carro extends Veiculo {
+    public void mover() {
+        System.out.println("Carro se movendo");
+    }
+}
+
+// Veiculo v = new Veiculo(); // ERRO! Não pode instanciar uma classe abstrata
+
+final
+→ Não pode ser estendida (ou seja, não pode ter subclasses).
+→ Para métodos, significa que não podem ser sobrescritos.
+public final class Constantes {
+    public static final double PI = 3.14;
+}
+
+// class NovaClasse extends Constantes {} // ERRO! Não pode herdar de classe final
+
+Qual a diferença de metodo pra construtor?
+
+-> Construtor é apenas um metodo especial, chamados automaticamente quando instanciadas.
+-> Podemos garantir que seja executado antes de qualquer outro metodo
+-> Não podem retornar nenhum valor
+-> Usam o memso nome da Classe
