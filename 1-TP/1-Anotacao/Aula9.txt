@@ -1,0 +1,17 @@
+Overload
+->  Sobrecarga de metodos e construtores
+    Uso do mesmo nome mas com parametros e funções diferentes
+    Ex: public int soma (int n1, int n2){ return n1 + n2; }
+        public int soma (int n1, int n2, int n3){ return n1 + n2 + n3; }
+        public double soma (int n1, int n2){ return n1 + n2; }
+
+Metodos Static
+->  Pertencem a classe em si, não a instância individuais. Não precisando instanciar os objetos para ser usados
+    Acesso: Só podem acessar membros estaticos diretamente
+    Imutabilidade: Não são associados a instancias da classe
+    Herança: Não são herdados
+    Ex: Metodo Math
+
+    São chamados de classe utilitária, quebrando a OO.
+
+    Uteis para funcionalidades globais e independentes do estado do objeto
