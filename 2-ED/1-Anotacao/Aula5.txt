@@ -7,27 +7,43 @@ Complexidade espacial: Quanto espaço (memória) o algoritmo precisa para rodar.
 Importância do Big O
 
 Desenvolvimento de software de alta qualidade: Ao escolher o algoritmo certo para um problema, podemos garantir que ele será eficiente e escalável.
+
 Melhoria da performance: Compreender a complexidade de um algoritmo ajuda a encontrar soluções mais rápidas e econômicas em termos de memória.
+
 Escolha de algoritmos: Saber a complexidade ajuda a escolher o algoritmo adequado para diferentes cenários, como grandes volumes de dados, tempo de resposta crítico, ou mesmo a quantidade de memória disponível.
 
-Niveis de complexidade:
+Ex:
+->  Encontrar uma pagina no meio de um livro (em qualquer parte)
 
-O(1) - Constante:
-Exemplo: Acesso direto a um elemento de um array.
-Significa que, independentemente do tamanho da entrada (n), o tempo de execução é sempre o mesmo.
+    Busca Linear -> Percorre pagina por pagina até encontrar
+    Complexidade: O(n)
 
-O(n) - Linear:
-Exemplo: Percorrer todos os elementos de um array.
-O tempo de execução cresce linearmente com o aumento do tamanho da entrada.
+    Busca Binária ->    Divido o meio do livro
+                        Se a página em questão for maior que o meio, descarto a parte inferior
+                        Se a página em questão for menor que o meio, descarto a parte superior
 
-O(log n) - Logarítmica:
-Exemplo: Busca binária.
-A complexidade logarítmica significa que o número de operações aumenta muito mais devagar em comparação com a entrada. Geralmente, isso ocorre quando você divide a entrada de alguma forma.
+                        Faço essa divisão novamente na parte divida, até encontrar a pagina exatamente (meio)
+    Complexidade: O(log n)
 
-O(n²) - Quadrática:
-Exemplo: Algoritmos de ordenação como Selection Sort, Insertion Sort e Bubble Sort.
-O tempo de execução cresce de forma quadrática com o tamanho da entrada, ou seja, o tempo de execução dobra para cada aumento pequeno na entrada.
+Outras complexidades:
 
-O(n!) - Fatorial:
-Exemplo: Algoritmos que exploram todas as permutações possíveis de um conjunto (como a solução para o problema do caixeiro viajante).
-O crescimento fatorial é muito rápido e os algoritmos com essa complexidade geralmente são muito ineficientes para grandes entradas.
+Complexidade Constante - O(1)
+->  Independentemente da entrada de dados, o tempo não vai mudar
+    Ex:
+    ->  Acessar o 1 elemento de uma lista (vetor)
+ 
+Complexidade Quadrática - O(n2)
+->  Quando o tempo de execução aumenta quadraticamente em relação aos dados
+    Ex: Quando o programa compara um numero com todos os elementos e repete essa ação
+    Ex: Bubble Sort -> Laços aninhados
+    Ex: Comparar se o elemento de um array é menor que o proximo elemento...
+
+Complexidade Exponencial - O(2n)
+->  Quando o tempo cresce exponencialmente em relação aos dados
+    Ex: Encontrar ou decifrar a senha de um cadeado com 3 digitios
+        Cada digito ou combinação de digitos crescem
+        
+        Ex: Algoritmo de Fibonacci -> Começam com 0 e 1, e os proximos são a soma dos 2 anteriores
+
+    Ex: Encontrar os numeros duplicados dentro de um array
+        Pega cada elemento por vez, e verifica se tem valores iguais a ele
