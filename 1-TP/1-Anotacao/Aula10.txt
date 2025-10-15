@@ -1,0 +1,79 @@
+O que é herança?
+->  Herança é o mecanismo que permite que uma classe (chamada subclasse ou classe filha) herde atributos e métodos de outra classe (chamada superclasse ou classe pai).
+    Você cria uma classe base com comportamentos e características comuns, e outras classes podem reutilizar e especializar esses comportamentos.
+
+    Ex:
+        public class Animal {
+            String nome;
+
+            public void comer() {
+                System.out.println(nome + " está comendo.");
+            }
+        }
+
+        public class Cachorro extends Animal {
+
+            public void latir() {
+                System.out.println(nome + " está latindo!");
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Cachorro dog = new Cachorro();
+ 
+                dog.nome = "Rex";
+                dog.comer();  // método herdado de Animal
+                dog.latir();  // método próprio da classe Cachorro
+            }
+        }
+
+        
+Como funciona o extends
+->  A palavra-chave extends é usada para indicar que uma classe herda de outra.
+
+    Com isso, Cachorro:
+    herda todos os atributos e métodos públicos/protegidos da classe Animal;
+    pode adicionar novos métodos e atributos;
+    pode sobrescrever métodos (polimorfismo).
+
+Sobrescrita de métodos (Override)
+->  public class Cachorro extends Animal {
+        @Override
+        public void comer() {
+            System.out.println(nome + " está comendo ração!");
+        }
+    }
+
+Quando a classe pai (superclasse) tem um construtor definido, é importante saber como o construtor da classe filha (subclasse) interage com ele:
+->  Ex:
+        public class Animal {
+            String nome;
+
+            public Animal(String nome) {
+                this.nome = nome;
+            }
+
+            public void comer() {
+                System.out.println(nome + " está comendo.");
+            }
+        }
+
+        public class Cachorro extends Animal {
+            public Cachorro(String nome) {
+                super(nome);
+            }
+
+            public void latir() {
+                System.out.println(nome + " está latindo!");
+            }
+        }
+
+        public class Main {
+            public static void main(String[] args) {
+                Cachorro dog = new Cachorro("Rex");
+
+                dog.comer();  // herdado de Animal
+                dog.latir();  // da própria classe Cachorro
+            }
+        }
