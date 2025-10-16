@@ -1,0 +1,68 @@
+Estrutura de dados:
+->  Formas de armazenamento e organizaçãi de informações na memória do computador para otimizar o acesso e manipulação de dados
+    Ex: Uma lista pode servir de base para implementar pilhas e fuilas, que podem servir de base para arvores e grafos
+
+Tipos de dados abstratos
+->  Representar a estrutura por meio de conceitos e operações, sem se preocupar como os dados são implementados internamente
+    Favorece abstração
+    Simplificar operações em programas
+
+    Ex: Pilha que permite empilhar, desempilhar e verTopo. Não precisamos saber se ela foi implementada como vetor, lista - apenas a su operação
+
+Lista:
+->  Acesso e manipulação posições variaadas
+
+Pilhas:
+->  LIFO (ultimo a entrar, primeiro a sair)
+
+Fila:
+->  FIFO (primeiro a entrar, primeiro a sair)
+
+------------------------------------------------------------
+
+Listas:
+->  Dados são armazenados de forma sequencial chamadas "nós"
+    Lista encadeada
+    Nós:
+        campo de informações (dado armazenado)
+        campo de endereço (ponteiro -> aponta para o proximo nó)
+
+    A lista pode ser:
+        Simplemente encadeada: cada nó aponta para o proximo
+        Duplamente encadeada: cada nó aponta para o proximo e para o anterior
+        Circular: o ultimo nó aponta novamente para o primeiro nó
+
+1 - [ valor | próximo ]
+    
+    valor → guarda o dado (um número, por exemplo 10, 20, 30)
+    próximo → guarda a referência para o próximo nó da lista (ou null se for o último)
+
+2 - A lista começa vazia
+    ListaEncadeada lista = new ListaEncadeada();
+    
+    inicio -> null
+    inicio não aponta para nada ainda (lista vazia).
+
+3 - Adicionando o primeiro nó
+    lista.adicionar(10);
+
+    Cria um novo nó: [10 | null]
+
+4 - Adicionando o segundo nó
+    lista.adicionar(20);
+    
+    Cria o nó [20 | null]
+    Percorre a lista até o último nó (atual = [10 | null])
+
+    Conecta o último nó ao novo:
+    inicio -> [10 | próximo] -> [20 | null]
+
+5 - Adicionando o terceiro nó
+    lista.adicionar(30);
+
+    Cria [30 | null]
+    Vai até o último nó [20 | null] e liga o proximo dele ao novo nó:
+
+    inicio -> [10 | próximo] -> [20 | próximo] -> [30 | null]
+
+    
