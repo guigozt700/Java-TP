@@ -1,0 +1,48 @@
+Lista:
+->  Guarda varios elementos em sequencia
+    Como uma fila de pessoas esperando para ser atendidas:
+
+    ->  O primeiro da fila é atendidido primeiro
+    ->  O ultimo que chega fica no fim da fila
+
+Tipos de listas:
+
+1 - Lista estática (vetor ou array)
+    Caixa com divisões fixas
+    Define o tamanho
+
+    Ex: int[] vetor = new int[5];
+
+2 - Lista encadeada (dinâmica)
+    É como uma corrente, onde cada nó aponta para o outro(próximo)
+    -> valor (ex: nome cliente)
+    -> ponteiro (link) para o próximo nó
+    Pode adicionar ou remover elementos sem se preocupar com o tamanho
+
+    Ex: [ANA] -> [CARLOS] -> [BIA] -> null
+
+    Ex:
+    class No{
+        String nome;
+        No proximo;
+    }
+
+    No n1 = new No("ana");
+    No n2 = new NO("bia");
+
+    n1.proximo = n2;
+
+O que significa inicio == null?
+->  Significa que a lista está vazia — ou seja, não há nenhum elemento.
+    Quando adicionamos o primeiro item, inicio passa a apontar para ele.
+
+    Ex:
+    class No {
+    String nome;
+    No proximo;
+
+        public No(String nome) {
+            this.nome = nome;
+            this.proximo = null;
+        }
+    }

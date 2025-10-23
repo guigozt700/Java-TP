@@ -1,0 +1,6 @@
+Nome Guilherme Gomes da Silva
+
+1 -	Alocação estática: quando o tamanho da memória é definido. Sendo fixo e imutável
+	Alocação dinâmica: Quando o programa cria espaço na memória enquanto roda. Podendo cresce ou diminui.
+
+2 -	Serve para indicar o próximo nó
