@@ -1,0 +1,18 @@
+Classe abistrata:
+->  Servem como modelo para outras classes, mas não podem ser herdadas
+    -   Não pode ser instanciada diretamente
+    -   Podem conter metodos abstratos (sem implementação) e concretos (com implementação)
+
+    Ex:
+        public abstract class Animal{
+            public abstract void fazerSom();
+
+            public void dormir(){
+                print("Dormindo...")
+            }
+        }
+
+    Ex:
+        -   Se eu criar uma classe abstrata Forma, ela teria um metodo "calcularArea()"
+        -   E suas heranças (Circulo, Retangulo) herdariam e sobrescreveriam esse metodo "calcularArea" com suas características próprias, usando o Override.
+        
