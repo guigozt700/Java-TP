@@ -1,0 +1,55 @@
+INterface:
+->  Tipo abstrato que define um contrato que uma classe deve implementar
+    Não pode ser instanciada
+    Todos os metodos abstratos
+    Não contem atributos de instancia, apenas constantes "final"
+
+    Ex:
+    public interface Pagavel{
+        double calcularPagamento();
+        default void imprime(double valor){
+            print("RECIBO: " + valor)
+        }
+    }
+
+    Ex Classe Funcionario:
+    public class Funcionario implements Pagavel{
+        private String nome;
+        private double salario;
+        private int horas;
+
+        @Override
+        public double calcularPagamento(){
+            return salario * horas
+        }
+    }
+
+    Ex: Classe Fornnecedor
+    public class Fornecedor implements Pagavel{
+        private String nome;
+        private double valorContrato;
+
+        @Override
+        public double calcularPagamento(){
+            return valorContrato
+        }
+    }
+
+    Ex: Main
+    public main(String[] args){
+        Pagavel funcionario = nw Funcionario("Joao", 50.0, 160);
+        Pagavel fornecedor = new Fornecedor("Empresa", 1000.0);
+        
+        funcionario.calcularPagamento();
+        funcionario.imprime();
+
+        fornecedor.calcularPagamento();
+        fornecedor.imprime();
+    }
+
+Interface:
+->  Todos os metodos na interface são implicitamente abstract e public e, não podem ser declaradas em seus corpos.
+    Campos, se houver serão implicitamente considerados static e final
+
+Classe x Interface:
+->  Interface são mecanismo de herança multipla, permitindo que mais de uma interface determine os metodos de uma classe herdeira deve implementar
