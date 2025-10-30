@@ -6,7 +6,7 @@ class Retangulo{
     public double largura;
     public double altura;
 
-    public Retangulo(double larg, double alt) {
+    public Retangulo(double larg, double alt, String cor) {
         largura = larg;
         altura = alt;
     }
