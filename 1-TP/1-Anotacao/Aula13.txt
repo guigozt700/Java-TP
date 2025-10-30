@@ -1,0 +1,38 @@
+Polimorfismo:
+->  Capacidade de um objeto se compotar de diferentes maneiras, dependendo do contexto (de quem chama)
+
+Tipos de Polimorfismo:
+
+ 1 - Compilação (estático) -> Metodo Overloading
+
+ 2 - Execução (dinâmico) -> Metodo Overriding
+
+ Overloading (Sobrecarga):
+->  Quando dois ou mais metodos tem o mesmo nome, mas assinaturas diferentes
+
+    class Calculadora{
+        int soma(int a, int b){
+            return a + b;
+        }
+
+        double soma(double a, double b){
+            return a + b;
+        }
+    }
+
+
+Overriding (Sobrecrita)
+->  Ocorre em tempo de execução, é quando uma classe filha redefine um metodo herdado da classe pai, alterando seu comportamento
+
+    class Animal{
+        void fazerSom(){
+            print("Som generico");
+        }
+    }
+
+    class Cachorro extends Animal{  
+        @Override
+        void fazerSom(){
+            print("Au au")
+        }
+    }
