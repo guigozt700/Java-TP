@@ -1,0 +1,61 @@
+O que é recursividade?
+->  Recursividade é quando uma função chama a si mesma para resolver um problema.
+    A ideia é dividir um problema grande em subproblemas menores, até chegar a um caso tão simples que possa ser resolvido diretamente — o chamado caso base.
+
+Estrutura básica de uma função recursiva
+
+Em Java, uma função recursiva tem duas partes fundamentais:
+
+Caso base → define quando a recursão deve parar.
+
+Chamada recursiva → a função chama a si mesma com parâmetros diferentes.
+
+Exemplo geral:
+
+void funcaoRecursiva() {
+    if (condicaoDeParada) {  // caso base
+        return;
+    } else {
+        funcaoRecursiva();  // chamada recursiva
+    }
+}
+
+Exemplo clássico: fatorial
+
+O fatorial de um número n é o produto de todos os números inteiros positivos até n.
+
+Matematicamente:
+
+n!=n×(n−1)×(n−2)×⋯×1
+
+Com a condição de que:
+
+0!=1
+
+Ex:
+public class FatorialRecursivo {
+    public static int fatorial(int n) {
+        if (n == 0) {         // caso base
+            return 1;
+        } else {              // passo recursivo
+            return n * fatorial(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fatorial(5)); // saída: 120
+    }
+}
+
+Toda função recursiva precisa de um caso base bem definido.
+Se faltar o caso base ou ele nunca for alcançado, o programa entrará em loop infinito, resultando em um erro de StackOverflowError.
+
+Quando usar recursividade?
+
+A recursão é especialmente útil em problemas que:
+
+têm estrutura hierárquica (ex: árvores, diretórios, XML);
+
+podem ser divididos em subproblemas semelhantes (ex: fatorial, Fibonacci, busca binária);
+
+exigem exploração de possibilidades (ex: algoritmos de backtracking).
