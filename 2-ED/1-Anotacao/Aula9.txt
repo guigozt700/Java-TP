@@ -1,0 +1,93 @@
+O que é um grafo?
+->  Um grafo é uma estrutura que representa relações entre objetos.
+    Ele é formado por:
+
+    -   Vértices (ou nós) → os elementos (ex: cidades, pessoas, páginas da web...)
+    -   Arestas (ou ligações) → conexões entre os vértices (ex: estradas, amizades, links...)
+
+    Exemplo do mundo real:
+    -   São Paulo — Rio de Janeiro — Belo Horizonte
+    Aqui, cada cidade é um vértice, e cada estrada é uma aresta
+
+| Tipo                      | Descrição                                  | Exemplo                                       |
+| ------------------------- | ------------------------------------------ | --------------------------------------------- |
+| **Não direcionado**       | A conexão vale nos dois sentidos           | A — B significa que A está ligado a B e B a A |
+| **Direcionado (digrafo)** | A ligação tem direção                      | A → B (mas B não liga pra A necessariamente)  |
+| **Ponderado**             | As arestas têm peso (ex: distância, custo) | A —(5km)— B                                   |
+| **Não ponderado**         | As arestas não têm peso                    | A — B                                         |
+
+
+O que é o grau de um vértice?
+->  O grau de um vértice é o número de arestas ligadas a ele.
+
+    Por exemplo:
+    A — B — C
+    |       
+    D
+
+    -   A tem 2 conexões → grau 2
+    -   B tem 2 conexões → grau 2
+    -   C tem 1 conexão → grau 1
+    -   D tem 1 conexão → grau 1
+
+| Tipo                            | Onde aparece              | O que significa                        |
+| ------------------------------- | ------------------------- | -------------------------------------- |
+| **Grau**                        | Grafo **não direcionado** | Quantas arestas saem/entram no vértice |
+| **Grau de entrada (in-degree)** | Grafo **direcionado**     | Quantas arestas **chegam** ao vértice  |
+| **Grau de saída (out-degree)**  | Grafo **direcionado**     | Quantas arestas **saem** do vértice    |
+
+    Exemplo (direcionado):
+
+    A → B → C
+    ↑     ↓
+    └── D ┘
+
+    -   A: grau de saída = 1, entrada = 1
+    -   B: saída = 1, entrada = 1
+    -   C: entrada = 2, saída = 0
+    -   D: saída = 1, entrada = 1
+
+O que é um caminho em um grafo?
+->  Um caminho é uma sequência de vértices conectados por arestas.
+
+    Exemplo:
+    A — B — C — D
+
+    O caminho de A até D é:
+    A → B → C → D
+
+    -   Cada ligação entre vértices faz parte do trajeto.
+    -   O caminho pode ter peso (custo) ou não.
+
+| Tipo                           | Descrição                                               | Exemplo                          |
+| ------------------------------ | ------------------------------------------------------- | -------------------------------- |
+| **Caminho simples**            | Nenhum vértice se repete                                | A → B → C                        |
+| **Caminho fechado (ou ciclo)** | Começa e termina no mesmo vértice                       | A → B → C → A                    |
+| **Caminho mínimo**             | O caminho com o menor número de arestas (ou menor peso) | A → C é mais curto que A → B → C |
+
+
+O que é conectividade?
+
+->  Conectividade mostra se todos os vértices de um grafo estão ligados entre si — direta ou indiretamente.
+
+    Se você pode ir de qualquer vértice a qualquer outro, o grafo é conexo.
+    Se há algum vértice isolado (sem ligação com os outros), o grafo é desconexo.
+
+    -   Exemplo visual
+        -   Conexo
+            A — B — C — D
+
+            Você pode ir de A até D, passando por outros vértices.
+            ✅ Conexo
+
+        -   Grafo desconexo
+            A — B     C — D
+
+            Os grupos {A,B} e {C,D} não se conectam.
+            ❌ Desconexo
+
+| Tipo                  | Aplica-se a                 | Significa                                             |
+| --------------------- | --------------------------- | ----------------------------------------------------- |
+| **Conectado**         | Grafos **não direcionados** | Existe um caminho entre todos os vértices             |
+| **Fortemente conexo** | Grafos **direcionados**     | Há caminho de *A → B* e também *B → A*                |
+| **Fracamente conexo** | Grafos **direcionados**     | Ignorando a direção das arestas, o grafo seria conexo |
