@@ -1,0 +1,92 @@
+O que é o try-catch?
+->  Em Java, o try-catch é uma estrutura usada para tratar erros (ou exceções) que podem acontecer durante a execução do programa.
+    Em vez do programa parar quando ocorre um erro, o try-catch permite que você trate o problema e continue a execução.
+
+    Imagine este código:
+
+    int a = 10;
+    int b = 0;
+    int resultado = a / b;
+    System.out.println("Resultado: " + resultado);
+
+    Isso vai gerar um erro em tempo de execução:
+    -   Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+    O programa para e nada mais é executado.
+
+Como o try-catch resolve isso
+->  Podemos envolver o código “perigoso” dentro de um bloco try, e tratar o erro dentro de um bloco catch:
+
+    int a = 10;
+    int b = 0;
+
+    try {
+        int resultado = a / b; // Pode causar erro
+        System.out.println("Resultado: " + resultado);
+    } catch (ArithmeticException e) {
+        System.out.println("Erro: divisão por zero não é permitida!");
+    }
+
+    O que acontece aqui:
+
+    -   O Java tenta executar o código dentro do try.
+    -   Se der erro, ele pula para o catch correspondente.
+    -   O programa não trava — ele continua normalmente depois do catch.
+
+Estrutura geral
+
+    try {
+        // Código que pode causar uma exceção
+    } catch (TipoDaExcecao e) {
+        // O que fazer se esse tipo de erro acontecer
+    } finally {
+        // (opcional) Código que sempre será executado, com erro ou sem erro
+    }
+
+Exemplos de tipos de exceção comuns:
+
+    -   ArithmeticException → erro de matemática (ex: divisão por zero)
+    -   NullPointerException → tentar acessar algo que é null
+    -   ArrayIndexOutOfBoundsException → acessar índice inexistente em um array
+    -   IOException → erro de leitura/escrita de arquivos
+
+Exemplo completo com finally
+
+    try {
+        int[] numeros = {1, 2, 3};
+        System.out.println(numeros[5]); // índice inexistente
+    } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Erro: você tentou acessar uma posição inválida do array!");
+    } finally {
+        System.out.println("Bloco finally: sempre executa, mesmo com erro.");
+    }
+
+    Saída:
+
+    Erro: você tentou acessar uma posição inválida do array!
+    Bloco finally: sempre executa, mesmo com erro.
+
+Dica extra: vários catch
+
+->  Você pode ter vários blocos catch para tratar diferentes tipos de erro:
+
+    try {
+        // Código que pode causar diferentes tipos de exceções
+    } catch (NullPointerException e) {
+        System.out.println("Erro: objeto nulo!");
+    } catch (ArithmeticException e) {
+        System.out.println("Erro: cálculo inválido!");
+    } catch (Exception e) {
+        System.out.println("Erro genérico: " + e.getMessage());
+    }
+
+    O último catch (Exception e) é como um “pega-tudo” — ele trata qualquer erro que não se encaixe nos anteriores.
+
+Em resumo
+
+| Palavra-chave | Função                                                  |
+| ------------- | ------------------------------------------------------- |
+| `try`         | Onde você coloca o código que pode dar erro             |
+| `catch`       | Onde você trata o erro caso aconteça                    |
+| `finally`     | (opcional) Código que sempre roda, com ou sem erro      |
+| `Exception`   | Tipo genérico de erro (pode ser mais específico também) |
