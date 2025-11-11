@@ -1,0 +1,223 @@
+1. O programa começa pelo main()
+
+Java sempre executa o método main primeiro.
+Então ele chega aqui:
+
+public static void main(String[] args) {
+    GrafoTuristicoSP_Ponderado grafo = new GrafoTuristicoSP_Ponderado();
+
+
+🧩 Nesse momento:
+
+Um novo objeto do tipo GrafoTuristicoSP_Ponderado é criado.
+Isso chama o construtor da classe.
+
+-------------------
+
+2. O construtor é executado
+public GrafoTuristicoSP_Ponderado() {
+    adjacencia = new HashMap<>();
+}
+
+
+🧠 O que acontece aqui:
+
+O grafo começa vazio.
+
+Cria-se um Map (dicionário) chamado adjacencia para guardar os vértices e suas conexões.
+
+📦 Agora temos:
+
+adjacencia = {}
+
+-------------------
+
+3. O programa cria a lista de pontos turísticos
+String[] pontos = {
+    "Avenida Paulista",
+    "MASP",
+    "Parque Ibirapuera",
+    "Catedral da Sé",
+    "Mercado Municipal",
+    "Pinacoteca",
+    "São Bento",
+    "Beco do Batman",
+    "Farol Santander"
+};
+
+
+🧠 Aqui só está sendo criada uma lista de nomes (os vértices do grafo).
+
+-------------------
+
+4. Cada ponto é adicionado como vértice
+for (String p : pontos)
+    grafo.adicionarVertice(p);
+
+
+🔁 Esse laço for passa um por um e chama:
+
+public void adicionarVertice(String vertice) {
+    adjacencia.putIfAbsent(vertice, new ArrayList<>());
+}
+
+
+🧩 O que acontece internamente:
+
+O Java verifica se o vértice já existe.
+
+Se não existir, adiciona ele ao mapa com uma lista vazia (sem conexões ainda).
+
+📦 Após esse passo:
+
+adjacencia = {
+  "Avenida Paulista": [],
+  "MASP": [],
+  "Parque Ibirapuera": [],
+  ...
+}
+
+--------------------
+
+5. Agora o programa adiciona as arestas (ligações)
+
+Exemplo:
+
+grafo.adicionarAresta("Avenida Paulista", "MASP", 0.3);
+
+
+➡️ Chama o método:
+
+public void adicionarAresta(String origem, String destino, double peso) {
+    adjacencia.get(origem).add(new Aresta(destino, peso));
+    adjacencia.get(destino).add(new Aresta(origem, peso)); // não direcionado
+}
+
+
+🧠 O que acontece aqui:
+
+Pega a lista do vértice “Avenida Paulista”.
+
+Adiciona dentro dela uma nova aresta que vai para “MASP” com peso 0.3 km.
+
+Faz o mesmo no sentido inverso (porque o grafo é não direcionado).
+
+📦 Resultado parcial:
+
+"Avenida Paulista" -> [("MASP", 0.3)]
+"MASP" -> [("Avenida Paulista", 0.3)]
+
+
+➡️ E o programa repete isso pra todas as conexões que você definiu.
+
+
+---------------------
+
+6. Agora o grafo está completo
+
+Depois que todas as arestas são adicionadas, o Map interno fica mais ou menos assim:
+
+{
+  "Avenida Paulista": [("MASP", 0.3), ("Parque Ibirapuera", 2.0), ("Beco do Batman", 3.0)],
+  "MASP": [("Avenida Paulista", 0.3), ("Parque Ibirapuera", 1.7)],
+  "Catedral da Sé": [("Mercado Municipal", 1.0), ("Farol Santander", 0.8)],
+  ...
+}
+
+
+Agora o grafo está completo e conectado.
+
+------------------
+
+7. O programa mostra a lista de adjacência
+grafo.mostrarListaAdjacencia();
+
+
+➡️ Entra nesse método:
+
+for (String vertice : adjacencia.keySet()) {
+    System.out.print(vertice + " -> ");
+    for (Aresta a : adjacencia.get(vertice)) {
+        System.out.print(a.destino + "(" + a.peso + " km) ");
+    }
+    System.out.println();
+}
+
+
+🧠 O que ele faz:
+
+Pega cada vértice.
+
+Mostra quem está ligado a ele e as distâncias.
+
+🖨️ Exemplo de saída:
+
+Avenida Paulista -> MASP(0.3 km) Parque Ibirapuera(2.0 km) Beco do Batman(3.0 km)
+MASP -> Avenida Paulista(0.3 km) Parque Ibirapuera(1.7 km)
+
+----------------------
+
+8. O programa mostra todas as arestas (sem repetir)
+grafo.mostrarArestas();
+
+
+➡️ Esse método:
+
+Percorre todos os vértices.
+
+Para cada um, mostra suas ligações.
+
+Usa um Set chamado exibidas para não repetir arestas (ex: “MASP — Paulista” e “Paulista — MASP”).
+
+🧩 Internamente:
+
+if (!exibidas.contains(reversa)) {
+    System.out.println(v + " — " + a.destino + " : " + a.peso + " km");
+    exibidas.add(aresta);
+}
+
+
+🖨️ Exemplo de saída:
+
+=== ARESTAS DO GRAFO ===
+Avenida Paulista — MASP : 0.3 km
+Avenida Paulista — Parque Ibirapuera : 2.0 km
+MASP — Parque Ibirapuera : 1.7 km
+
+------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
