@@ -1,0 +1,163 @@
+Classes principais para manipular arquivos
+
+->  O Java oferece várias classes para criar e manipular arquivos. As mais usadas são:
+
+| Classe           | Pacote          | Uso principal                                             |
+| ---------------- | --------------- | --------------------------------------------------------- |
+| `File`           | `java.io`       | Representa um arquivo ou diretório no sistema de arquivos |
+| `FileWriter`     | `java.io`       | Escreve texto em arquivos                                 |
+| `BufferedWriter` | `java.io`       | Escreve texto de forma eficiente (usa buffer)             |
+| `Files`          | `java.nio.file` | Manipula arquivos de forma moderna (Java 7+)              |
+
+Criando um arquivo com File
+
+    import java.io.File;
+    import java.io.IOException;
+
+    public class CriarArquivo {
+        public static void main(String[] args) {
+            try {
+                File arquivo = new File("exemplo.txt");
+
+                if (arquivo.createNewFile()) {
+                    System.out.println("Arquivo criado: " + arquivo.getName());
+                } else {
+                    System.out.println("O arquivo já existe.");
+                }
+            } catch (IOException e) {
+                System.out.println("Ocorreu um erro.");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    O que acontece aqui:
+
+    O método createNewFile() cria o arquivo apenas se ele ainda não existir.
+    Retorna true se o arquivo foi criado, e false se já existia.
+
+Escrevendo no arquivo com FileWriter
+
+    import java.io.FileWriter;
+    import java.io.IOException;
+
+    public class EscreverArquivo {
+        public static void main(String[] args) {
+            try {
+                FileWriter escritor = new FileWriter("exemplo.txt");
+                escritor.write("Olá, mundo!\nEste é um arquivo criado em Java.");
+                escritor.close();
+                System.out.println("Texto gravado com sucesso!");
+            } catch (IOException e) {
+                System.out.println("Erro ao escrever no arquivo.");
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    🔹 Dica: use new FileWriter("arquivo.txt", true) para acrescentar (append) em vez de sobrescrever.
+
+Lendo um arquivo em Java
+
+    Existem várias formas de ler arquivos — vou te mostrar duas bem comuns:
+
+    usando classes da API clássica (java.io)
+    e a forma moderna com java.nio.file (recomendada)
+
+    Opção 1: Ler com BufferedReader
+
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+
+    public class LerArquivo {
+        public static void main(String[] args) {
+            try (BufferedReader leitor = new BufferedReader(new FileReader("exemplo.txt"))) {
+                String linha;
+                while ((linha = leitor.readLine()) != null) {
+                    System.out.println(linha);
+                }
+            } catch (IOException e) {
+                System.out.println("Erro ao ler o arquivo.");
+                e.printStackTrace();
+            }
+        }
+    }
+
+    Opção 2: Ler com Files (Java NIO)
+
+    import java.io.IOException;
+    import java.nio.file.*;
+    import java.util.List;
+
+    public class LerArquivoNIO {
+        public static void main(String[] args) {
+            Path caminho = Paths.get("exemplo_nio.txt");
+
+            try {
+                List<String> linhas = Files.readAllLines(caminho);
+                for (String linha : linhas) {
+                    System.out.println(linha);
+                }
+            } catch (IOException e) {
+                System.out.println("Erro ao ler o arquivo.");
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    🔹 Aqui:
+
+    Files.readAllLines() lê todo o conteúdo do arquivo e retorna uma lista de strings.
+
+    É simples, mas cuidado com arquivos muito grandes (pois ele lê tudo de uma vez na memória).
+
+Excluindo um arquivo
+
+    Método clássico (File.delete()):
+    import java.io.File;
+
+    public class ExcluirArquivo {
+        public static void main(String[] args) {
+            File arquivo = new File("exemplo.txt");
+
+            if (arquivo.delete()) {
+                System.out.println("Arquivo excluído com sucesso!");
+            } else {
+                System.out.println("Falha ao excluir o arquivo.");
+            }
+        }
+    }
+
+
+    🔹 Retorna true se o arquivo foi apagado, false se não existia ou não pôde ser removido.
+
+
+Obtendo informaçoes do arquivo:
+
+    usando a classe File (API clássica)
+    usando a API moderna java.nio.file (mais poderosa e precisa)
+
+    1. Usando a classe File
+    import java.io.File;
+
+    public class InfoArquivo {
+        public static void main(String[] args) {
+            File arquivo = new File("exemplo.txt");
+
+            if (arquivo.exists()) {
+                System.out.println("Nome: " + arquivo.getName());
+                System.out.println("Caminho absoluto: " + arquivo.getAbsolutePath());
+                System.out.println("Pode ser lido: " + arquivo.canRead());
+                System.out.println("Pode ser escrito: " + arquivo.canWrite());
+                System.out.println("Tamanho (bytes): " + arquivo.length());
+                System.out.println("Última modificação (ms desde 1970): " + arquivo.lastModified());
+                System.out.println("É diretório? " + arquivo.isDirectory());
+                System.out.println("É arquivo? " + arquivo.isFile());
+            } else {
+                System.out.println("O arquivo não existe!");
+            }
+        }
+    }
